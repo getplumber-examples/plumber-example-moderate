@@ -1,0 +1,15 @@
+# Dependabot is configured (good), but neither ecosystem declares a `cooldown:`
+# window — so Dependabot would open a PR the instant a new version is published,
+# including a freshly-compromised release. Two ISSUE-902 (low) findings.
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    versioning-strategy: increase

@@ -1,0 +1,26 @@
+# NOTE (for the Plumber demo): this auxiliary workflow was never hardened like
+# ci.yml / release.yml. It is missing `name:`, a `permissions:` block and a
+# `concurrency:` block, and it pins a third-party action by tag instead of SHA.
+# Those four gaps are what move this repository from A to C.
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  triage:
+    runs-on: ubuntu-24.04
+    steps:
+      - id: changes
+        uses: dorny/paths-filter@v3
+        with:
+          filters: |
+            docs:
+              - 'docs/**'
+              - '**/*.md'
+            src:
+              - 'src/**'
+      - if: steps.changes.outputs.docs == 'true'
+        run: echo "Documentation changed"
+      - if: steps.changes.outputs.src == 'true'
+        run: echo "Source changed"
