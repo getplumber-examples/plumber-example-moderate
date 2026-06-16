@@ -23,6 +23,13 @@ Run `plumber analyze --score-point` to see this table live:
 
 `finalPoints = 100 − 40.5 = 59.5` → band **C** (51–70). No Critical findings, so no malus.
 
+> **Note (authorized-sources control).** `dorny/paths-filter@v3` is also an action from an
+> owner outside the allowlist, so it now raises **ISSUE-713** (`githubActionMustComeFromAuthorizedSources`,
+> high) in addition to ISSUE-701 — the labeler's unvetted third-party action is flagged on two
+> axes (unpinned **and** unauthorized source). The repo still lands in band **C** under the
+> current shipped control set. The point table above is the aspirational full-policy view; run
+> `plumber analyze --score-point` for the live breakdown.
+
 ## What it does right (so it isn't worse than C)
 
 - `ci.yml`, `codeql.yml`, `release.yml` are SHA-pinned, least-privilege, concurrent, and use

@@ -1,7 +1,8 @@
 # NOTE (for the Plumber demo): this auxiliary workflow was never hardened like
 # ci.yml / release.yml. It is missing `name:`, a `permissions:` block and a
-# `concurrency:` block, and it pins a third-party action by tag instead of SHA.
-# Those four gaps are what move this repository from A to C.
+# `concurrency:` block, and it pins a third-party action by tag instead of SHA
+# (dorny/paths-filter — also outside the authorized-sources allowlist, ISSUE-713).
+# Those gaps are what move this repository from A to C.
 
 on:
   pull_request:
