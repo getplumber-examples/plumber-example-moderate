@@ -1,5 +1,7 @@
 # plumber-example-moderate — target Plumber score: **C** 🟡
 
+[![Plumber Score](https://img.shields.io/badge/Plumber%20Score-C-yellow)](https://github.com/getplumber-examples/plumber-example-moderate/actions/workflows/plumber.yml?query=branch%3Amain)
+
 A *realistic, imperfect* repository for the [Plumber](https://github.com/getplumber/plumber)
 scanner. The main CI and release pipelines are well hardened, but a few corners were never
 finished. It uses the **same** [`.plumber.yaml`](./.plumber.yaml) policy as the clean and
