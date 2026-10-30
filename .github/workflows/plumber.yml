@@ -29,7 +29,6 @@ jobs:
           # This repo intentionally carries a realistic spread of findings
           # (target grade C). Surface them (SARIF + report) without hard-failing
           # CI on the known gap.
-          platform: https://demo-github.getplumber.tech
           soft-fail: true
           # Publish the live C badge to score.getplumber.io (default branch only).
           score-push: true
